@@ -109,3 +109,16 @@ body {
 }
 
 div[class^='object-actions-'],div[class*=' object-actions-'] {margin-bottom: 10px}
+
+.toggle-filters {
+	float: right;
+}
+
+.filters-container {
+    position: absolute;
+    right: 10px;
+	background: white;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 5px 10px;
+}

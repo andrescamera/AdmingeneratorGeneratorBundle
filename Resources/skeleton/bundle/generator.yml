@@ -5,6 +5,7 @@ params:
     concurrency_lock: ~
     bundle_name: {{ bundle_name }}
     pk_requirement: ~
+    hideFilters: false
     fields: ~
     object_actions:
         delete: ~

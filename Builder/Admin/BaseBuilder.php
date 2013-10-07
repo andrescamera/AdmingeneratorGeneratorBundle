@@ -434,6 +434,11 @@ class BaseBuilder extends GenericBaseBuilder
         return str_replace('\\', '', $this->getVariable('namespace_prefix'));
     }
 
+    public function getHideFilters()
+    {
+        return (boolean)$this->getVariable('hideFilters');
+    }
+
     public function getBaseActionsRoute()
     {
         return str_replace(

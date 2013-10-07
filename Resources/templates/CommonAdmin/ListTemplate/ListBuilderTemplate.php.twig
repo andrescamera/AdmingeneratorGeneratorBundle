@@ -17,9 +17,14 @@
 
 {{ echo_block("body") }}
     {{- block('title') -}}
+    
+    {% if builder.hideFilters %}
+        <a href="#" class="toggle-filters">Show/Hide Filters</a>
+    {% endif %}
 
     <div class="row-fluid">
-        <div class="{% if builder.filterColumns|length == 0 %} span12 {% else %} span9 {% endif %}">
+        
+        <div class="{% if builder.filterColumns|length == 0 or builder.hideFilters %} span12 {% else %} span9 {% endif %}">
             {{- block('list_scopes') -}}
 
             {{ echo_include(builder.namespacePrefixForTemplate ~ bundle_name ~ ':' ~ builder.BaseGeneratorName ~ 'List:results.html.twig') }}
@@ -27,7 +32,7 @@
         
         {{ echo_block("filters") }}
             {% if builder.filterColumns|length > 0 %}
-            <div class="span3">
+            <div class="span3 filters-container" {% if builder.hideFilters %} style="display: none;" {% endif %}>
                 {{ echo_include(builder.namespacePrefixForTemplate ~ bundle_name ~ ':' ~ builder.BaseGeneratorName ~ 'List:filters.html.twig') }}
             </div>
             {% endif %}

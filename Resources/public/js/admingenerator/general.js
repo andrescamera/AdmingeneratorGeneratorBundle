@@ -8,4 +8,8 @@ $(document).ready(function(){
 
     // Moved all scripts to dedicated widgets
     // Do not remove, this file is used when developing new features
+	
+	$('.toggle-filters').click(function(event){
+		$('.filters-container').css('top', $('.toggle-filters').position().top + 25 + 'px').toggle();
+	});
 });
